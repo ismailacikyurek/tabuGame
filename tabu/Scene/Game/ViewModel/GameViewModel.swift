@@ -47,8 +47,10 @@ final class GameViewModel {
 
   func startTime() {
     viewController.timer = Timer.scheduledTimer(timeInterval: 1.0, target: viewController, selector: #selector(viewController.fireTimer), userInfo: nil, repeats: true)
-    viewController.startTime()
+    
   }
+  
+
 
 }
 
