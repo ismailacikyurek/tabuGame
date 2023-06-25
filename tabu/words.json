@@ -1,0 +1,388 @@
+
+
+{
+  "words" : [
+    {
+      "mainWord": "Yalaka",
+      "firstWord": "Yağcı",
+      "secondWord": "Riyakar",
+      "thirdWord": "Patron",
+      "fourthWord": "İşyeri",
+      "fifthWord": "İltifat"
+    },{
+      "mainWord": "Dolap",
+      "firstWord": "Raf",
+      "secondWord": "Kapı",
+      "thirdWord": "Askı",
+      "fourthWord": "Tabak",
+      "fifthWord": "Elbise"
+    },{
+      "mainWord": "Daktilo",
+      "firstWord": "Harf",
+      "secondWord": "Tuş",
+      "thirdWord": "Stilo",
+      "fourthWord": "Kağıt",
+      "fifthWord": "Yazmak"
+    },{
+      "mainWord": "Anahtar",
+      "firstWord": "Kilit",
+      "secondWord": "Metal",
+      "thirdWord": "Kapı",
+      "fourthWord": "Çilingir",
+      "fifthWord": "Kasa"
+    },{
+      "mainWord": "Çorap",
+      "firstWord": "Kaçmak",
+      "secondWord": "Ten Rengi",
+      "thirdWord": "Parizyen",
+      "fourthWord": "Ayak",
+      "fifthWord": "İnce"
+    },{
+      "mainWord": "Filoloji",
+      "firstWord": "Dil Bilim",
+      "secondWord": "Lisan",
+      "thirdWord": "İngilizce",
+      "fourthWord": "Üniversite",
+      "fifthWord": "Edebiyat"
+    },{
+      "mainWord": "Yastık",
+      "firstWord": "Uyku",
+      "secondWord": "Yumuşak",
+      "thirdWord": "Tüy",
+      "fourthWord": "Baş",
+      "fifthWord": "Ortopedik"
+    },{
+      "mainWord": "Mouse",
+      "firstWord": "Fare",
+      "secondWord": "Bilgisayar",
+      "thirdWord": "Klavye",
+      "fourthWord": "Tuş",
+      "fifthWord": "Mühendis"
+    },{
+      "mainWord": "Fon",
+      "firstWord": "Para",
+      "secondWord": "Banka",
+      "thirdWord": "Sıvı",
+      "fourthWord": "Hesap",
+      "fifthWord": "Yatırım"
+    },{
+      "mainWord": "Banka",
+      "firstWord": "Müşteri",
+      "secondWord": "Para",
+      "thirdWord": "Hesap",
+      "fourthWord": "Çek",
+      "fifthWord": "Kredi"
+    },{
+      "mainWord": "Kara Kutu",
+      "firstWord": "Uçak",
+      "secondWord": "Pilot",
+      "thirdWord": "Hava",
+      "fourthWord": "Ses Kaydı",
+      "fifthWord": "Enkaz"
+    },{
+      "mainWord": "Mücevher",
+      "firstWord": "Nakit",
+      "secondWord": "Vakit",
+      "thirdWord": "Altın",
+      "fourthWord": "Zengin",
+      "fifthWord": "Kadın"
+    },{
+      "mainWord": "Humus",
+      "firstWord": "Ezme",
+      "secondWord": "Meze",
+      "thirdWord": "Yemek",
+      "fourthWord": "Nohut",
+      "fifthWord": "Toprak"
+    },{
+      "mainWord": "Feminen",
+      "firstWord": "Dişi",
+      "secondWord": "Kadın",
+      "thirdWord": "Çekici",
+      "fourthWord": "Seksi",
+      "fifthWord": "Maskülen"
+    },{
+      "mainWord": "Musakka",
+      "firstWord": "Kıyma",
+      "secondWord": "Yemek",
+      "thirdWord": "Patlıcan",
+      "fourthWord": "Karnıyarık",
+      "fifthWord": "İmambayıldı"
+    },{
+      "mainWord": "Piknik Tüpü",
+      "firstWord": "Gaz",
+      "secondWord": "Küçük",
+      "thirdWord": "Taşımak",
+      "fourthWord": "Mangal",
+      "fifthWord": "Çay Yapmak"
+    },{
+      "mainWord": "Metehan",
+      "firstWord": "Hun",
+      "secondWord": "Asya",
+      "thirdWord": "Ordu",
+      "fourthWord": "Kağan",
+      "fifthWord": "Onluk Sistem"
+    },{
+      "mainWord": "Çıngırak",
+      "firstWord": "Zil",
+      "secondWord": "Bebek",
+      "thirdWord": "Yılan",
+      "fourthWord": "Sallamak",
+      "fifthWord": "Ses Çıkarmak"
+    },{
+      "mainWord": "Biyografi",
+      "firstWord": "Ünlü",
+      "secondWord": "Hikaye",
+      "thirdWord": "Yaşam",
+      "fourthWord": "Hayat",
+      "fifthWord": "Yazmak"
+    },{
+      "mainWord": "Telefon",
+      "firstWord": "Alo",
+      "secondWord": "Aramak",
+      "thirdWord": "Çaldırmak",
+      "fourthWord": "Mesaj",
+      "fifthWord": "Çekmek"
+    },{
+      "mainWord": "Futbol",
+      "firstWord": "Top",
+      "secondWord": "Erkek",
+      "thirdWord": "Maç",
+      "fourthWord": "Halı Saha",
+      "fifthWord": "Oynamak"
+    },{
+      "mainWord": "Kopya",
+      "firstWord": "Sınav",
+      "secondWord": "Kpss",
+      "thirdWord": "Yazılı",
+      "fourthWord": "Sözlü",
+      "fifthWord": "Ders"
+    },{
+      "mainWord": "Korsan",
+      "firstWord": "Karayip",
+      "secondWord": "CD",
+      "thirdWord": "Film",
+      "fourthWord": "Çete",
+      "fifthWord": "Deniz"
+    },{
+      "mainWord": "Klavye",
+      "firstWord": "Mouse",
+      "secondWord": "Bilgisayar",
+      "thirdWord": "F-Q",
+      "fourthWord": "Laptop",
+      "fifthWord": "Diz Üstü"
+    },{
+      "mainWord": "Cam Silmek",
+      "firstWord": "Perde",
+      "secondWord": "Bayram",
+      "thirdWord": "Ayna",
+      "fourthWord": "Ovalamak",
+      "fifthWord": "Pencere"
+    },{
+      "mainWord": "Mahkeme",
+      "firstWord": "Polis",
+      "secondWord": "Adliye",
+      "thirdWord": "Duruşma",
+      "fourthWord": "Hakim",
+      "fifthWord": "Suç"
+    },{
+      "mainWord": "Avukat",
+      "firstWord": "Savcı",
+      "secondWord": "Hukuk",
+      "thirdWord": "Mahkeme",
+      "fourthWord": "Tutmak",
+      "fifthWord": "Suç"
+    },{
+      "mainWord": "Telaş",
+      "firstWord": "Acele",
+      "secondWord": "Panik",
+      "thirdWord": "Korku",
+      "fourthWord": "Dolanmak",
+      "fifthWord": "Heyecan"
+    },{
+      "mainWord": "Denetleme",
+      "firstWord": "Komutan",
+      "secondWord": "Kontrol",
+      "thirdWord": "Sayım",
+      "fourthWord": "Trafik",
+      "fifthWord": "Gözlem"
+    },{
+      "mainWord": "Genel Kurul",
+      "firstWord": "Şirket",
+      "secondWord": "Firma",
+      "thirdWord": "Yönetim",
+      "fourthWord": "Patron",
+      "fifthWord": "Karar"
+    },{
+      "mainWord": "Kitaplık",
+      "firstWord": "Kitap",
+      "secondWord": "Kütüphane",
+      "thirdWord": "Oda",
+      "fourthWord": "Defter",
+      "fifthWord": "Raf"
+    },{
+      "mainWord": "Behzat Ç.",
+      "firstWord": "Ankara",
+      "secondWord": "Başkent",
+      "thirdWord": "Dizi",
+      "fourthWord": "Behzat",
+      "fifthWord": "Harun"
+    },{
+      "mainWord": "Uçurtma",
+      "firstWord": "Çoçuk",
+      "secondWord": "Hava",
+      "thirdWord": "İp",
+      "fourthWord": "Gökyüzü",
+      "fifthWord": "Kuyruk"
+    },{
+      "mainWord": "Saklambaç",
+      "firstWord": "Oyun",
+      "secondWord": "Çoçuk",
+      "thirdWord": "Eğlence",
+      "fourthWord": "Ebe",
+      "fifthWord": "Saklanmak"
+    },{
+      "mainWord": "Banka Hesabı",
+      "firstWord": "Eft",
+      "secondWord": "Havale",
+      "thirdWord": "Transfer",
+      "fourthWord": "Para",
+      "fifthWord": "Altın"
+    },{
+      "mainWord": "Elebaşı",
+      "firstWord": "Çete",
+      "secondWord": "Polis",
+      "thirdWord": "Suç",
+      "fourthWord": "Örgüt",
+      "fifthWord": "Lider"
+    },{
+      "mainWord": "Kayısı",
+      "firstWord": "Malatya",
+      "secondWord": "Şeftali",
+      "thirdWord": "Turuncu",
+      "fourthWord": "Renk",
+      "fifthWord": "Meyve"
+    },{
+      "mainWord": "Naaş",
+      "firstWord": "Cenaze",
+      "secondWord": "Ölü",
+      "thirdWord": "Vefat",
+      "fourthWord": "Mezarlık",
+      "fifthWord": "Ceset"
+    },{
+      "mainWord": "Hürriyet",
+      "firstWord": "Cumhuriyet",
+      "secondWord": "Özgürlük",
+      "thirdWord": "Bağımsızlık",
+      "fourthWord": "Baskı",
+      "fifthWord": "Otoriter"
+    },{
+      "mainWord": "Siyasi Lider",
+      "firstWord": "Siyaset",
+      "secondWord": "Parti",
+      "thirdWord": "Önder",
+      "fourthWord": "Başkan",
+      "fifthWord": "Seçim"
+    },{
+      "mainWord": "Analog",
+      "firstWord": "Saat",
+      "secondWord": "Dijital",
+      "thirdWord": "Zaman",
+      "fourthWord": "Yuvarlak",
+      "fifthWord": "Kumanda"
+    },{
+      "mainWord": "Kardiyo",
+      "firstWord": "Fitness",
+      "secondWord": "Spor",
+      "thirdWord": "Kalp",
+      "fourthWord": "Terleme",
+      "fifthWord": "Kilo"
+    },{
+      "mainWord": "Dikiz Aynası",
+      "firstWord": "Araba",
+      "secondWord": "Araç",
+      "thirdWord": "Arka",
+      "fourthWord": "Kontrol",
+      "fifthWord": "Trafik"
+    },{
+      "mainWord": "Vites",
+      "firstWord": "Otomatik",
+      "secondWord": "Geri",
+      "thirdWord": "İleri",
+      "fourthWord": "Araba",
+      "fifthWord": "Araç"
+    },{
+      "mainWord": "Dermatolog",
+      "firstWord": "Cilt",
+      "secondWord": "Saç",
+      "thirdWord": "Doktor",
+      "fourthWord": "Hekim",
+      "fifthWord": "Tıp"
+    },{
+      "mainWord": "Hazine",
+      "firstWord": "Maliye",
+      "secondWord": "Para",
+      "thirdWord": "Altın",
+      "fourthWord": "Bakan",
+      "fifthWord": "Servet"
+    },{
+      "mainWord": "Enflasyon",
+      "firstWord": "Para",
+      "secondWord": "Değer",
+      "thirdWord": "Yüzde",
+      "fourthWord": "Basmak",
+      "fifthWord": "Zam"
+    },{
+      "mainWord": "Villa",
+      "firstWord": "Ev",
+      "secondWord": "Lüx",
+      "thirdWord": "Konut",
+      "fourthWord": "Daire",
+      "fifthWord": "Zengin"
+    },{
+      "mainWord": "Çıkmaz Sokak",
+      "firstWord": "Cadde",
+      "secondWord": "Mahalle",
+      "thirdWord": "Yol",
+      "fourthWord": "Çıkış",
+      "fifthWord": "Köşe"
+    },{
+      "mainWord": "Kibir",
+      "firstWord": "Beğeni",
+      "secondWord": "Ego",
+      "thirdWord": "Yüksek",
+      "fourthWord": "Aşağılamak",
+      "fifthWord": "Değersiz"
+    },{
+      "mainWord": "Alçı",
+      "firstWord": "İnşaat",
+      "secondWord": "Duvar",
+      "thirdWord": "Kırık",
+      "fourthWord": "Dökük",
+      "fifthWord": "Sıva"
+    },{
+      "mainWord": "Kaza",
+      "firstWord": "Kader",
+      "secondWord": "Araç",
+      "thirdWord": "Trafik",
+      "fourthWord": "Yaralı",
+      "fifthWord": "Sürücü"
+    },{
+      "mainWord": "Darphane",
+      "firstWord": "Merkez Bankası",
+      "secondWord": "Para",
+      "thirdWord": "Dolar",
+      "fourthWord": "Basmak",
+      "fifthWord": "Madeni"
+    },{
+      "mainWord": "İlk Yardım",
+      "firstWord": "Hastane",
+      "secondWord": "Acil",
+      "thirdWord": "Kırık",
+      "fourthWord": "Nefes",
+      "fifthWord": "Doktor"
+    }
+
+  ]
+}
+
+
