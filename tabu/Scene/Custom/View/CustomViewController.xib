@@ -278,9 +278,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kKu-qU-zdI">
-                                    <rect key="frame" x="191" y="-3" width="49" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kKu-qU-zdI">
+                                    <rect key="frame" x="187" y="0.33333333333337123" width="51" height="31"/>
                                     <color key="onTintColor" systemColor="systemOrangeColor"/>
                                     <connections>
                                         <action selector="switchChanged:" destination="-1" eventType="valueChanged" id="1RV-KS-PAy"/>
@@ -314,6 +313,7 @@
                                 <constraint firstItem="yxE-h1-7tk" firstAttribute="centerY" secondItem="SQj-kM-HBA" secondAttribute="centerY" id="HQP-nO-V3t"/>
                                 <constraint firstItem="VXb-S8-i7T" firstAttribute="leading" secondItem="aUz-zy-ygH" secondAttribute="leading" constant="8" id="J62-uq-MW3"/>
                                 <constraint firstAttribute="trailing" secondItem="Xu5-zH-JGh" secondAttribute="trailing" constant="6" id="KAX-lJ-jAn"/>
+                                <constraint firstItem="kKu-qU-zdI" firstAttribute="centerY" secondItem="yxE-h1-7tk" secondAttribute="centerY" id="MxX-0g-q1m"/>
                                 <constraint firstItem="SQj-kM-HBA" firstAttribute="top" secondItem="aUz-zy-ygH" secondAttribute="top" constant="5" id="kuh-X9-Tkr"/>
                                 <constraint firstItem="x4j-pC-0us" firstAttribute="leading" secondItem="VXb-S8-i7T" secondAttribute="trailing" constant="5" id="mLy-se-XWE"/>
                                 <constraint firstItem="SQj-kM-HBA" firstAttribute="leading" secondItem="aUz-zy-ygH" secondAttribute="leading" constant="8" id="mVb-oN-MCj"/>
@@ -321,6 +321,7 @@
                                 <constraint firstItem="yxE-h1-7tk" firstAttribute="leading" secondItem="SQj-kM-HBA" secondAttribute="trailing" constant="5" id="qDU-Qw-zZQ"/>
                                 <constraint firstItem="Xu5-zH-JGh" firstAttribute="leading" secondItem="x4j-pC-0us" secondAttribute="trailing" constant="20" id="qt2-tx-Iqn"/>
                                 <constraint firstItem="Xu5-zH-JGh" firstAttribute="centerY" secondItem="x4j-pC-0us" secondAttribute="centerY" id="x94-XB-fMj"/>
+                                <constraint firstItem="kKu-qU-zdI" firstAttribute="trailing" secondItem="Xu5-zH-JGh" secondAttribute="trailing" multiplier="1.04" id="yLV-6k-3K8"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-Cv-z7c">
