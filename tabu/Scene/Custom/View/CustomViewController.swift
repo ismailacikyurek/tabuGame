@@ -60,7 +60,7 @@ class CustomViewController: UIViewController {
       }
     case 1 :
       //Round Süresi +10
-      if roundTime > 290 {
+      if roundTime > 170 {
       } else {
         roundTime += 10
       }
