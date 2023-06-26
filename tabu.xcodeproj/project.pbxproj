@@ -21,6 +21,8 @@
 		4431A7472A459C54000DBA1D /* extension+UIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431A7462A459C54000DBA1D /* extension+UIview.swift */; };
 		4431A7492A45A5F5000DBA1D /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */; };
 		4431A74C2A45C0A2000DBA1D /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4431A74B2A45C0A2000DBA1D /* ShimmerSwift */; };
+		4460DA5A2A49815D004BA526 /* HowGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460DA582A49815D004BA526 /* HowGameViewController.swift */; };
+		4460DA5B2A49815D004BA526 /* HowGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4460DA592A49815D004BA526 /* HowGameViewController.xib */; };
 		44949DD82A45D2E1004F4574 /* smile.json in Resources */ = {isa = PBXBuildFile; fileRef = 44949DD72A45D2E1004F4574 /* smile.json */; };
 		44949DDE2A45FB91004F4574 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44949DDD2A45FB91004F4574 /* GameViewController.swift */; };
 		44949DE12A45FFD1004F4574 /* WordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44949DDF2A45FFD1004F4574 /* WordsTableViewCell.swift */; };
@@ -53,6 +55,8 @@
 		4431A7442A459C4C000DBA1D /* extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+UILabel.swift"; sourceTree = "<group>"; };
 		4431A7462A459C54000DBA1D /* extension+UIview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIview.swift"; sourceTree = "<group>"; };
 		4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		4460DA582A49815D004BA526 /* HowGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowGameViewController.swift; sourceTree = "<group>"; };
+		4460DA592A49815D004BA526 /* HowGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowGameViewController.xib; sourceTree = "<group>"; };
 		44949DD72A45D2E1004F4574 /* smile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smile.json; sourceTree = "<group>"; };
 		44949DDD2A45FB91004F4574 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		44949DDF2A45FFD1004F4574 /* WordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		4431A7312A459AE4000DBA1D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4460DA562A49813F004BA526 /* How */,
 				440AED472A488E6600C4CF70 /* Custom */,
 				44949DF02A475795004F4574 /* Ready */,
 				44949DD92A45FB4B004F4574 /* Game */,
@@ -185,6 +190,23 @@
 				4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */,
 			);
 			path = Comp;
+			sourceTree = "<group>";
+		};
+		4460DA562A49813F004BA526 /* How */ = {
+			isa = PBXGroup;
+			children = (
+				4460DA572A498148004BA526 /* View */,
+			);
+			path = How;
+			sourceTree = "<group>";
+		};
+		4460DA572A498148004BA526 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4460DA582A49815D004BA526 /* HowGameViewController.swift */,
+				4460DA592A49815D004BA526 /* HowGameViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		44949DD92A45FB4B004F4574 /* Game */ = {
@@ -355,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4460DA5B2A49815D004BA526 /* HowGameViewController.xib in Resources */,
 				440AED4C2A488E8900C4CF70 /* CustomViewController.xib in Resources */,
 				44949DE62A464F13004F4574 /* ok-tik.json in Resources */,
 				440AED4E2A48C61500C4CF70 /* Nova.mp3 in Resources */,
@@ -415,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4460DA5A2A49815D004BA526 /* HowGameViewController.swift in Sources */,
 				44949DDE2A45FB91004F4574 /* GameViewController.swift in Sources */,
 				44949DEF2A46F07A004F4574 /* Service.swift in Sources */,
 				4431A7452A459C4C000DBA1D /* extension+UILabel.swift in Sources */,

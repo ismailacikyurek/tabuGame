@@ -21,13 +21,14 @@ class GameViewController: UIViewController {
   private lazy var trueButton = UIButton()
   private lazy var homeButton = UIButton()
   private lazy var playAndStopButton = UIButton()
-   lazy var timeLabel = UILabel()
+  lazy var timeLabel = UILabel()
+  lazy var passCountLabel = UILabel()
 
   private lazy var tabuLabel = UILabel()
   internal lazy var isFirstTeam = true
   internal lazy var firstTeam = 0
   internal lazy var secondTeam = 0
-  internal lazy var passCount = 0
+  internal lazy var passCount = UserDefaults.getRightofPass()
   private var isStop = Bool()
   var timer = Timer()
   var time = UserDefaults.getTimeRound()
@@ -59,6 +60,9 @@ class GameViewController: UIViewController {
       musicVolume(Float(0.0))
       if self.time == nil {
         self.time = 60
+      }
+      if self.passCount == nil {
+        self.passCount = 2
       }
 
     }
@@ -133,6 +137,14 @@ class GameViewController: UIViewController {
     } else {
       self.time = UserDefaults.getTimeRound()
     }
+
+    //pasCount
+    self.passCount = UserDefaults.getRightofPass()
+    self.passCountLabel.text = "\(self.passCount!)"
+    self.pasButton.isEnabled = true
+    self.passCountLabel.layer.borderColor = UIColor.black.cgColor
+
+
     self.timeLabel.text = ""
     self.viewModel.nextWordCart()
     self.viewModel.startTime()
@@ -146,8 +158,9 @@ class GameViewController: UIViewController {
 
 extension GameViewController : GeneralProtocol {
   func addView() {
-    view.addSubviews(wordCartView,pasButton,tabuButton,trueButton,animationView,tabuLabel,timeLabel,playAndStopButton,homeButton)
+    view.addSubviews(wordCartView,pasButton,tabuButton,trueButton,animationView,tabuLabel,timeLabel,playAndStopButton,homeButton,passCountLabel)
     wordCartView.addSubviews(wordTableView,wordTableImage)
+
 
   }
   func addTarget() {
@@ -159,7 +172,7 @@ extension GameViewController : GeneralProtocol {
 
   }
   fileprivate func playAndStopButtonSetImage(image : String) {
-    let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .bold, scale: .large)
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 60, weight: .thin, scale: .medium)
     let largeBoldDoc = UIImage(systemName: image, withConfiguration: largeConfig)
     playAndStopButton.tintColor = .white
     playAndStopButton.setImage(largeBoldDoc, for: .normal)
@@ -176,20 +189,17 @@ extension GameViewController : GeneralProtocol {
 
     pasButton.layer.masksToBounds = true
     pasButton.layer.cornerRadius = 45
-    pasButton.backgroundColor = .yellow
-    pasButton.setImage(UIImage(named: "pass"), for: .normal)
+    pasButton.setImage(UIImage(named: "passButton"), for: .normal)
 
     tabuButton.layer.masksToBounds = true
-    tabuButton.layer.cornerRadius = 55
+    tabuButton.layer.cornerRadius = 50
     tabuButton.layer.borderColor = UIColor.white.cgColor
-    tabuButton.layer.borderWidth = 4
-    tabuButton.setImage(UIImage(named: "T"), for: .normal)
-    tabuButton.backgroundColor = .red
+    tabuButton.layer.borderWidth = 1
+    tabuButton.setImage(UIImage(named: "tabuButton"), for: .normal)
 
     trueButton.layer.masksToBounds = true
     trueButton.layer.cornerRadius = 45
-    trueButton.setImage(UIImage(named: "tik"), for: .normal)
-    trueButton.backgroundColor = .green
+    trueButton.setImage(UIImage(named: "trueButton"), for: .normal)
     animationView.layer.zPosition = 3
 
     tabuLabel.createLabel(text: "Tabu", textColor: .red, font: UIFont.systemFont(ofSize: 297), textAlignment: .center)
@@ -198,10 +208,16 @@ extension GameViewController : GeneralProtocol {
 
 
     timeLabel.createLabel(textColor: .white,font: UIFont.systemFont(ofSize: 25), textAlignment: .center)
-    playAndStopButtonSetImage(image: "stop.circle")
+    playAndStopButtonSetImage(image: "pause.fill")
 
     homeButton.setBackgroundImage(UIImage(systemName: "house.fill"), for: .normal)
     homeButton.tintColor = .white
+
+    passCountLabel.createLabel(backgroundColor: .white,textColor: .black, cornerRadius: 13,textAlignment: .center)
+    passCountLabel.layer.borderColor = UIColor.black.cgColor
+    passCountLabel.layer.borderWidth = 2
+    passCountLabel.text = "\(passCount!)"
+
   }
   func layoutUI() {
     wordCartViewConstraints()
@@ -216,6 +232,7 @@ extension GameViewController : GeneralProtocol {
     timeLabelConstraints()
     playAndStopButtonConstraints()
     homeButtonConstraints()
+    passCountLabelConstraints()
 
   }
   func timerAnimation() {
@@ -294,10 +311,8 @@ extension GameViewController  : GameViewModelProtocol{
   }
 
   func passNextWord() {
-    trueButton.isEnabled = true
-    tabuButton.isEnabled = true
-    guard passCount <= 1 else {return}
-    passCount += 1
+
+
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [self] in
       UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseOut, animations: { [self] in
         wordCartView.transform = CGAffineTransform(translationX: 0, y: -790)
@@ -308,10 +323,18 @@ extension GameViewController  : GameViewModelProtocol{
   }
 
   @objc func pasButtonTapped() {
-    trueButton.isEnabled = false
-    pasButton.isEnabled = false
-    tabuButton.isEnabled = false
-    passNextWord()
+    if passCount! <= 0 {
+      self.passCountLabel.text = "\(passCount!)"
+      passCountLabel.layer.borderColor = UIColor.red.cgColor
+    } else {
+      self.passCount! -= 1
+      self.passCountLabel.text = "\(passCount!)"
+      trueButton.isEnabled = false
+      pasButton.isEnabled = false
+      tabuButton.isEnabled = false
+      passNextWord()
+    }
+
   }
   
   @objc func tabuButtonButtonTapped() {
@@ -341,7 +364,7 @@ extension GameViewController  : GameViewModelProtocol{
   @objc func playAndStopButtonTapped() {
     if isStop {
       isStop = false
-      playAndStopButtonSetImage(image: "stop.circle")
+      playAndStopButtonSetImage(image: "pause.fill")
       self.viewModel.startTime()
       self.resumeAnimation()
       self.pasButton.isEnabled = true
@@ -400,8 +423,8 @@ extension GameViewController  {
 
   func tabuButtonConstraints() {
     self.tabuButton.snp.makeConstraints { make in
-      make.bottom.equalTo(self.view.snp.bottom).offset(-40)
-      make.height.width.equalTo(110)
+      make.bottom.equalTo(self.view.snp.bottom).offset(-30)
+      make.height.width.equalTo(100)
       make.centerX.equalTo(self.view).offset(0)
     }
   }
@@ -435,16 +458,23 @@ extension GameViewController  {
   }
   func playAndStopButtonConstraints() {
     self.playAndStopButton.snp.makeConstraints { make in
-      make.top.equalTo(self.view.snp.top).offset(view.bounds.height/6-30)
+      make.top.equalTo(self.view.snp.top).offset(view.bounds.height/6-25)
       make.trailing.equalTo(self.view.snp.trailing).offset(-50)
-      make.width.height.equalTo(60)
+      make.width.height.equalTo(50)
     }
   }
   func homeButtonConstraints() {
     self.homeButton.snp.makeConstraints { make in
-      make.top.equalTo(self.view.snp.top).offset(79)
+      make.top.equalTo(self.view.snp.top).offset(20)
       make.leading.equalTo(self.view.snp.leading).offset(15)
       make.width.height.equalTo(30)
+    }
+  }
+  func passCountLabelConstraints() {
+    self.passCountLabel.snp.makeConstraints { make in
+      make.top.equalTo(self.pasButton.snp.top).offset(7)
+      make.leading.equalTo(self.pasButton.snp.leading).offset(7)
+      make.width.height.equalTo(26)
     }
   }
 }
