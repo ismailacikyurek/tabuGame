@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Service {
+final class Service {
 
  static func fetchWords() -> WordsModelArray? {
     guard let sourcesURL = Bundle.main.path(forResource: "words", ofType: "json") else {
