@@ -21,6 +21,7 @@
 		4431A7472A459C54000DBA1D /* extension+UIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431A7462A459C54000DBA1D /* extension+UIview.swift */; };
 		4431A7492A45A5F5000DBA1D /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */; };
 		4431A74C2A45C0A2000DBA1D /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4431A74B2A45C0A2000DBA1D /* ShimmerSwift */; };
+		444280F12A49EBB10011C675 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444280F02A49EBB10011C675 /* ToastMessage.swift */; };
 		4460DA5A2A49815D004BA526 /* HowGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460DA582A49815D004BA526 /* HowGameViewController.swift */; };
 		4460DA5B2A49815D004BA526 /* HowGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4460DA592A49815D004BA526 /* HowGameViewController.xib */; };
 		44949DD82A45D2E1004F4574 /* smile.json in Resources */ = {isa = PBXBuildFile; fileRef = 44949DD72A45D2E1004F4574 /* smile.json */; };
@@ -55,6 +56,7 @@
 		4431A7442A459C4C000DBA1D /* extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+UILabel.swift"; sourceTree = "<group>"; };
 		4431A7462A459C54000DBA1D /* extension+UIview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIview.swift"; sourceTree = "<group>"; };
 		4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		444280F02A49EBB10011C675 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		4460DA582A49815D004BA526 /* HowGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowGameViewController.swift; sourceTree = "<group>"; };
 		4460DA592A49815D004BA526 /* HowGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowGameViewController.xib; sourceTree = "<group>"; };
 		44949DD72A45D2E1004F4574 /* smile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smile.json; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				4431A73D2A459C2D000DBA1D /* AlertMessage.swift */,
 				4431A73E2A459C2D000DBA1D /* GeneralProtocol.swift */,
 				440AED422A48815300C4CF70 /* UserDefaults.swift */,
+				444280F02A49EBB10011C675 /* ToastMessage.swift */,
 			);
 			path = Helperr;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				440AED4B2A488E8900C4CF70 /* CustomViewController.swift in Sources */,
 				44949DEA2A46E09A004F4574 /* GameViewModel.swift in Sources */,
 				44C64BA92A43A1E2002360FD /* AppDelegate.swift in Sources */,
+				444280F12A49EBB10011C675 /* ToastMessage.swift in Sources */,
 				44949DE42A4600C8004F4574 /* WordsModelArray.swift in Sources */,
 				44949DF22A4757B2004F4574 /* ReadyViewController.swift in Sources */,
 				4431A7402A459C2D000DBA1D /* GeneralProtocol.swift in Sources */,

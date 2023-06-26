@@ -50,6 +50,20 @@ class CustomViewController: UIViewController {
     NotificationCenter.default.post(name: Notification.Name(rawValue: "custom_changed"), object: nil,userInfo: nil)
     dismiss(animated: true)
   }
+
+  @IBAction func infoButtonTapped(_ sender: UIButton) {
+    switch sender.tag {
+    case 0 :
+      ToastMessage.showToastMessage(message: "Anlatıcının anlatma süresi", font: UIFont.systemFont(ofSize: 14), y: roundTimeView.frame.minY, vc: self)
+    case 1 :
+      ToastMessage.showToastMessage(message: "Her oyuncu bir kez Anlatıcı olduğunda bir raunt tamamlanmış olur.", font: UIFont.systemFont(ofSize: 14), y: roundCountView.frame.minY, vc: self)
+    case 2 :
+      ToastMessage.showToastMessage(message: "Anlatıcının her turda puan cezası almadan pas geçebileceği kelime sayısı", font: UIFont.systemFont(ofSize: 14), y: passCountView.frame.minY, vc: self)
+    default:
+      print("")
+    }
+
+  }
   @IBAction func buttonTapped(_ sender: Any) {
     let button = sender as! UIButton
     switch button.tag {
