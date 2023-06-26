@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-
+//MUSIC
     NotificationCenter.default.addObserver(self, selector: #selector(changedVolme(_:)), name: Notification.Name(rawValue: "volume_value"), object: nil)
 
 
