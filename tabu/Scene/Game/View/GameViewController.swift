@@ -465,7 +465,7 @@ extension GameViewController  {
   }
   func homeButtonConstraints() {
     self.homeButton.snp.makeConstraints { make in
-      make.top.equalTo(self.view.snp.top).offset(20)
+      make.top.equalTo(self.view.snp.top).offset(35)
       make.leading.equalTo(self.view.snp.leading).offset(15)
       make.width.height.equalTo(30)
     }
