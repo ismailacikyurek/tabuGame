@@ -46,7 +46,8 @@ class CustomViewController: UIViewController {
     UserDefaults.setTimeRound(second: roundTime)
     UserDefaults.setNumberofRounds(number: roundCount)
     UserDefaults.setRightofPass(number: passCount)
-    print(roundTime)
+
+    NotificationCenter.default.post(name: Notification.Name(rawValue: "custom_changed"), object: nil,userInfo: nil)
     dismiss(animated: true)
   }
   @IBAction func buttonTapped(_ sender: Any) {
@@ -66,13 +67,21 @@ class CustomViewController: UIViewController {
       }
     case 2 :
       //Round Sayısı -1
-      roundCount -= 1
+      if roundCount < 2 {
+      } else {
+        roundCount -= 1
+      }
+
     case 3 :
       //Round Sayısı +1
       roundCount += 1
     case 4 :
       //pass hakkı -1
-      passCount -= 1
+      if passCount < 1 {
+      } else {
+        passCount -= 1
+      }
+
     case 5 :
       //pass hakkı +1
       passCount += 1
@@ -85,6 +94,9 @@ class CustomViewController: UIViewController {
     self.passCountLabel.text = "\(passCount)"
   }
 
+  @IBAction func exitButtonTapped(_ sender: Any) {
+    dismiss(animated: true)
+  }
   @IBAction func switchChanged(_ sender: UISwitch) {
 
     if sender.isOn {

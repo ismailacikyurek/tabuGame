@@ -54,6 +54,8 @@ class MainViewController: UIViewController {
     layoutUI()
     addTarget()
     animationView.play()
+
+    NotificationCenter.default.addObserver(self, selector: #selector(customChanged), name: Notification.Name(rawValue: "custom_changed"), object: nil)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +80,12 @@ class MainViewController: UIViewController {
     gradientLayer.frame = self.view.bounds
 
     self.view.layer.insertSublayer(gradientLayer, at:0)
+  }
+
+  @objc func customChanged() {
+    passCountLabel.text = "\(UserDefaults.getRightofPass() ?? 2)"
+    roundCountLabel.text = "\(UserDefaults.getNumberofRounds() ?? 2)"
+    timeLabel.text = "\(UserDefaults.getTimeRound() ?? 60) saniye"
   }
 
 }
@@ -170,13 +178,14 @@ extension MainViewController {
     navigationController?.pushViewController(gameVC, animated: true)
   }
   @objc func rulesButtonTapped() {
-    
+    let vc = HowGameViewController()
+    vc.modalPresentationStyle = .pageSheet
+    self.present(vc, animated: true)
   }
   @objc func customViewTapped() {
-    print("sddsf")
-    let a = CustomViewController()
-    a.modalPresentationStyle = .pageSheet
-    self.present(a, animated: true)
+    let vc = CustomViewController()
+    vc.modalPresentationStyle = .pageSheet
+    self.present(vc, animated: true)
   }
 
 
