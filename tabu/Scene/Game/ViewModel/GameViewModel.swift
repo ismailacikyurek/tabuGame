@@ -9,17 +9,18 @@ import Foundation
 
 protocol GameViewModelProtocol : AnyObject {
   func fetchWord()
+  func fetchScore(redTeamScore : Int, blueTeamScore: Int)
 }
+
 final class GameViewModel {
+  
   var viewController = GameViewController()
   weak var delegate : GameViewModelProtocol?
   var datam : WordsModelArray?
   var wordStringArray = [String]()
-
-  var isFirstTeam : Bool = true
   var blueTeamScore : Int = 0
   var redTeamScore : Int = 0
-  var passCount : Int = 0
+
 
   func nextWordCart() {
 
@@ -36,26 +37,36 @@ final class GameViewModel {
     }
   }
 
-  func scoreCalculator(count : Int, teamColor : teamColor ) {
+  func scoreCalculator(count : Int, teamColor : teams ) {
+    redTeamScore = UserDefaults.getRedTeamScore()
+    blueTeamScore = UserDefaults.getBlueTeamScore()
     if teamColor == .blueTeam {
+
       blueTeamScore += count
+      UserDefaults.setBlueTeamScore(value: blueTeamScore)
+      
     } else {
       redTeamScore += count
-     
+      UserDefaults.setRedTeamScore(value: redTeamScore)
     }
+    fetchScore()
   }
+
+  func fetchScore() {
+    redTeamScore = UserDefaults.getRedTeamScore()
+    blueTeamScore = UserDefaults.getBlueTeamScore()
+    delegate?.fetchScore(redTeamScore: redTeamScore, blueTeamScore: blueTeamScore)
+  }
+
 
   func startTime() {
     viewController.timer = Timer.scheduledTimer(timeInterval: 1.0, target: viewController, selector: #selector(viewController.fireTimer), userInfo: nil, repeats: true)
     
   }
-  
-
 
 }
 
-
-enum teamColor {
-  case redTeam
-  case blueTeam
+public enum teams : String {
+  case redTeam = "redTeam"
+  case blueTeam = "blueTeam"
 }
