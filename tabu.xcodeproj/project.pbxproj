@@ -22,6 +22,9 @@
 		4431A7492A45A5F5000DBA1D /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */; };
 		4431A74C2A45C0A2000DBA1D /* ShimmerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4431A74B2A45C0A2000DBA1D /* ShimmerSwift */; };
 		444280F12A49EBB10011C675 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444280F02A49EBB10011C675 /* ToastMessage.swift */; };
+		444280F52A49F2080011C675 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444280F32A49F2080011C675 /* PopupViewController.swift */; };
+		444280F62A49F2080011C675 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 444280F42A49F2080011C675 /* PopupViewController.xib */; };
+		444280F82A5310270011C675 /* victory.json in Resources */ = {isa = PBXBuildFile; fileRef = 444280F72A5310270011C675 /* victory.json */; };
 		4460DA5A2A49815D004BA526 /* HowGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460DA582A49815D004BA526 /* HowGameViewController.swift */; };
 		4460DA5B2A49815D004BA526 /* HowGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4460DA592A49815D004BA526 /* HowGameViewController.xib */; };
 		44949DD82A45D2E1004F4574 /* smile.json in Resources */ = {isa = PBXBuildFile; fileRef = 44949DD72A45D2E1004F4574 /* smile.json */; };
@@ -57,6 +60,9 @@
 		4431A7462A459C54000DBA1D /* extension+UIview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIview.swift"; sourceTree = "<group>"; };
 		4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		444280F02A49EBB10011C675 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		444280F32A49F2080011C675 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		444280F42A49F2080011C675 /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		444280F72A5310270011C675 /* victory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = victory.json; sourceTree = "<group>"; };
 		4460DA582A49815D004BA526 /* HowGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowGameViewController.swift; sourceTree = "<group>"; };
 		4460DA592A49815D004BA526 /* HowGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowGameViewController.xib; sourceTree = "<group>"; };
 		44949DD72A45D2E1004F4574 /* smile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smile.json; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		4431A7312A459AE4000DBA1D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				444280F22A49F1F30011C675 /* Popup */,
 				4460DA562A49813F004BA526 /* How */,
 				440AED472A488E6600C4CF70 /* Custom */,
 				44949DF02A475795004F4574 /* Ready */,
@@ -193,6 +200,15 @@
 				4431A7482A45A5F5000DBA1D /* UIColor+extension.swift */,
 			);
 			path = Comp;
+			sourceTree = "<group>";
+		};
+		444280F22A49F1F30011C675 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				444280F32A49F2080011C675 /* PopupViewController.swift */,
+				444280F42A49F2080011C675 /* PopupViewController.xib */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		4460DA562A49813F004BA526 /* How */ = {
@@ -260,6 +276,7 @@
 		44949DF02A475795004F4574 /* Ready */ = {
 			isa = PBXGroup;
 			children = (
+				444280F72A5310270011C675 /* victory.json */,
 				44949DF12A4757B2004F4574 /* ReadyViewController.swift */,
 			);
 			path = Ready;
@@ -387,6 +404,8 @@
 				44C64BB52A43A1E3002360FD /* LaunchScreen.storyboard in Resources */,
 				44949DE22A45FFD1004F4574 /* WordsTableViewCell.xib in Resources */,
 				44949DD82A45D2E1004F4574 /* smile.json in Resources */,
+				444280F62A49F2080011C675 /* PopupViewController.xib in Resources */,
+				444280F82A5310270011C675 /* victory.json in Resources */,
 				44C64BB22A43A1E3002360FD /* Assets.xcassets in Resources */,
 				44949DE82A465DC7004F4574 /* words.json in Resources */,
 			);
@@ -461,6 +480,7 @@
 				4431A7492A45A5F5000DBA1D /* UIColor+extension.swift in Sources */,
 				44C64BAB2A43A1E2002360FD /* SceneDelegate.swift in Sources */,
 				4431A7432A459C48000DBA1D /* extension+UIImageView.swift in Sources */,
+				444280F52A49F2080011C675 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
