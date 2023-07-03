@@ -8,7 +8,6 @@
 import Foundation
 
 final class Service {
-
  static func fetchWords() -> WordsModelArray? {
     guard let sourcesURL = Bundle.main.path(forResource: "words", ofType: "json") else {
         fatalError("Could not find FlatColors.json")
@@ -23,5 +22,4 @@ final class Service {
     }
     return nil
   }
-
 }

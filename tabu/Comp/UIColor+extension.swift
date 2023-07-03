@@ -11,7 +11,6 @@ import UIKit
 
 extension UIColor {
 
-
   @nonobjc class var  mainBackgroundColor: UIColor {
     return UIColor(hexString:"#251A4F")
   }
@@ -54,9 +53,4 @@ extension UIColor {
   }
 
 }
-
-
-
-
-
 
