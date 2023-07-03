@@ -30,7 +30,6 @@ class CustomViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
 
-
     self.roundTime = UserDefaults.getTimeRound() ?? 60
     self.roundCount = UserDefaults.getNumberofRounds() ?? 2
     self.passCount = UserDefaults.getRightofPass() ?? 2
@@ -87,7 +86,7 @@ class CustomViewController: UIViewController {
       }
     case 2 :
       //Round Sayısı -1
-      if roundCount < 2 {
+      if roundCount < 2{
       } else {
         roundCount -= 1
       }
@@ -138,7 +137,6 @@ extension CustomViewController : GeneralProtocol {
   func addTarget() {}
   func setupUI() {
 
-    print(mainView.frame.height)
     mainView.layer.masksToBounds = true
     mainView.layer.cornerRadius = 20
     roundTimeView.layer.masksToBounds = true
