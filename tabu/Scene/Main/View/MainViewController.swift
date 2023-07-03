@@ -44,9 +44,6 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-
-    viewModel.delegate = self
-    viewModel.viewController = self
     setNavBar()
     setGradientBackground()
     addView()
@@ -56,6 +53,11 @@ class MainViewController: UIViewController {
     animationView.play()
 
     NotificationCenter.default.addObserver(self, selector: #selector(customChanged), name: Notification.Name(rawValue: "custom_changed"), object: nil)
+
+    UserDefaults.setWhichTeam(value: nil)
+    UserDefaults.setWhichRound(value: 1)
+    UserDefaults.setRedTeamScore(value: 0)
+    UserDefaults.setBlueTeamScore(value: 0)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -155,7 +157,6 @@ extension MainViewController : GeneralProtocol {
     timeLabelConstraints()
     roundUImageViewConstraints()
     roundCountLabelConstraints()
-
     passCountLabelConstraints()
     passUImageViewConstraints()
   }
@@ -187,8 +188,6 @@ extension MainViewController {
     vc.modalPresentationStyle = .overFullScreen
     self.present(vc, animated: true)
   }
-
-
 }
 
 extension MainViewController {
@@ -282,11 +281,4 @@ extension MainViewController {
   }
 }
 
-extension MainViewController : MainViewModelProtocol {
-  func customizationComplete() {
-
-  }
-
-
-}
 
