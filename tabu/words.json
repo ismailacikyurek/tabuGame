@@ -380,8 +380,203 @@
       "thirdWord": "Kırık",
       "fourthWord": "Nefes",
       "fifthWord": "Doktor"
+    },{
+      "mainWord": "Göze Gelmek",
+      "firstWord": "Batıl İnanç",
+      "secondWord": "Mavi Boncuk",
+      "thirdWord": "Nazar Değmek",
+      "fourthWord": "Kıskanmak",
+      "fifthWord": "Konuşmak"
+    },{
+      "mainWord": "Format",
+      "firstWord": "Bilgisayar",
+      "secondWord": "Kalıp",
+      "thirdWord": "Şekil",
+      "fourthWord": "Yeni",
+      "fifthWord": "Atmak"
+    },{
+      "mainWord": "Protez",
+      "firstWord": "Takma",
+      "secondWord": "Diş",
+      "thirdWord": "Kol",
+      "fourthWord": "Bacak",
+      "fifthWord": "Organ"
+    },{
+      "mainWord": "Çiğ Köfte",
+      "firstWord": "Acı",
+      "secondWord": "Bulgur",
+      "thirdWord": "Biber",
+      "fourthWord": "İsot",
+      "fifthWord": "Urfa"
+    },{
+      "mainWord": "Kemoterapi",
+      "firstWord": "Saç Dökülmesi",
+      "secondWord": "Kanser",
+      "thirdWord": "İlaç",
+      "fourthWord": "Tedavi",
+      "fifthWord": "Kimyasal"
+    },{
+      "mainWord": "Jeopolitik",
+      "firstWord": "Türkiye",
+      "secondWord": "Önem",
+      "thirdWord": "Tarih",
+      "fourthWord": "Coğrafya",
+      "fifthWord": "Yer"
+    },{
+      "mainWord": "Baraj",
+      "firstWord": "Keban",
+      "secondWord": "Su",
+      "thirdWord": "Biriktirmek",
+      "fourthWord": "Engellemek",
+      "fifthWord": "Hidroelektrik"
+    },{
+      "mainWord": "Aşçı",
+      "firstWord": "Mutfak",
+      "secondWord": "Yemek",
+      "thirdWord": "Önlük",
+      "fourthWord": "Meslek",
+      "fifthWord": "Arda Türkmen"
+    },{
+      "mainWord": "Bowling",
+      "firstWord": "Labut",
+      "secondWord": "Delik",
+      "thirdWord": "Devirmek",
+      "fourthWord": "Ayakkabı",
+      "fifthWord": "Top"
+    },{
+      "mainWord": "Makarna",
+      "firstWord": "Süzgeç",
+      "secondWord": "Çatal",
+      "thirdWord": "Spagetti",
+      "fourthWord": "Sos",
+      "fifthWord": "İtalyan"
+    },{
+      "mainWord": "Vektör",
+      "firstWord": "Çizmek",
+      "secondWord": "Doğru",
+      "thirdWord": "Fizik",
+      "fourthWord": "Skaler",
+      "fifthWord": "Yön"
+    },{
+      "mainWord": "Üvey",
+      "firstWord": "Öz",
+      "secondWord": "Anne",
+      "thirdWord": "Baba",
+      "fourthWord": "Evlat",
+      "fifthWord": "Çoçuk"
+    },{
+      "mainWord": "Pamuk Şeker",
+      "firstWord": "Tatlı",
+      "secondWord": "Pembe",
+      "thirdWord": "Sokak",
+      "fourthWord": "Anne",
+      "fifthWord": "Çubuk"
+    },{
+      "mainWord": "Kahraman",
+      "firstWord": "Korkusuz",
+      "secondWord": "Cesur",
+      "thirdWord": "Gözüpek",
+      "fourthWord": "Acar",
+      "fifthWord": "Atılgan"
+    },{
+      "mainWord": "Gitar",
+      "firstWord": "Enstrüman",
+      "secondWord": "Müzik",
+      "thirdWord": "Gözüpek",
+      "fourthWord": "Tel",
+      "fifthWord": "Çalmak"
+    },{
+      "mainWord": "Duvar Kağıdı",
+      "firstWord": "Ev",
+      "secondWord": "Süslemek",
+      "thirdWord": "Korumak",
+      "fourthWord": "Güzelleştirmek",
+      "fifthWord": "Yapıştırmak"
+    },{
+      "mainWord": "Rakı",
+      "firstWord": "Anason",
+      "secondWord": "Aslan Sütü",
+      "thirdWord": "İçki",
+      "fourthWord": "Alkol",
+      "fifthWord": "Yemek"
+    },{
+      "mainWord": "Püskürtmek",
+      "firstWord": "Gerilemek",
+      "secondWord": "Sıvı",
+      "thirdWord": "Fışkırtmak",
+      "fourthWord": "Savurtmak",
+      "fifthWord": "Çıkarmak"
+    },{
+      "mainWord": "Marangoz",
+      "firstWord": "Usta",
+      "secondWord": "Mobilya",
+      "thirdWord": "Şekil",
+      "fourthWord": "Ağaç",
+      "fifthWord": "Yapmak"
+    },{
+      "mainWord": "Sineye Çekmek",
+      "firstWord": "Kabullenmek",
+      "secondWord": "Susmak",
+      "thirdWord": "Katlanmak",
+      "fourthWord": "Razı Olmak",
+      "fifthWord": "Tahammül Etmek"
+    },{
+      "mainWord": "Gotik",
+      "firstWord": "Sivri",
+      "secondWord": "Anlayış",
+      "thirdWord": "Mimari",
+      "fourthWord": "Düşünce",
+      "fifthWord": "Sanat"
+    },{
+      "mainWord": "Adamcağız",
+      "firstWord": "Adam",
+      "secondWord": "Zavallı",
+      "thirdWord": "İyi",
+      "fourthWord": "İnsan",
+      "fifthWord": "Erkek"
+    },{
+      "mainWord": "Tuz Ruhu",
+      "firstWord": "Kimyasal",
+      "secondWord": "Temizlik",
+      "thirdWord": "Çamaşır Suyu",
+      "fourthWord": "Zararlı",
+      "fifthWord": "Kullanmak"
+    },{
+      "mainWord": "Affetmek",
+      "firstWord": "Bağışlamak",
+      "secondWord": "Özür",
+      "thirdWord": "Haksızlık",
+      "fourthWord": "Mağdur",
+      "fifthWord": "Kişi"
+    },{
+      "mainWord": "Bilim Kurgu",
+      "firstWord": "Film",
+      "secondWord": "Fantastik",
+      "thirdWord": "Tür",
+      "fourthWord": "Sinema",
+      "fifthWord": "İzlemek"
+    },{
+      "mainWord": "Ayan Beyan",
+      "firstWord": "Açık",
+      "secondWord": "Ortada",
+      "thirdWord": "Belli",
+      "fourthWord": "Söylemek",
+      "fifthWord": "Belirtmek"
+    },{
+      "mainWord": "Sponsor",
+      "firstWord": "Reklam",
+      "secondWord": "Ücretsiz",
+      "thirdWord": "Eşya",
+      "fourthWord": "Tanıtım",
+      "fifthWord": "Influncer"
+    },{
+      "mainWord": "Azrail",
+      "firstWord": "Ölüm",
+      "secondWord": "Can Almak",
+      "thirdWord": "Melek",
+      "fourthWord": "Ecel",
+      "fifthWord": "Yaşam"
     }
-
   ]
 }
 
