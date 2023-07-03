@@ -179,12 +179,12 @@ extension MainViewController {
   }
   @objc func rulesButtonTapped() {
     let vc = HowGameViewController()
-    vc.modalPresentationStyle = .pageSheet
+    vc.modalPresentationStyle = .overFullScreen
     self.present(vc, animated: true)
   }
   @objc func customViewTapped() {
     let vc = CustomViewController()
-    vc.modalPresentationStyle = .pageSheet
+    vc.modalPresentationStyle = .overFullScreen
     self.present(vc, animated: true)
   }
 
