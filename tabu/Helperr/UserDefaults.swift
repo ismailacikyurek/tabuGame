@@ -64,5 +64,47 @@ extension UserDefaults {
        return value
    }
 
+  //Sıra Hangi Takımda
+  public static func setWhichTeam(value:String?) {
+       UserDefaults.standard.set(value, forKey: "which_team")
+       UserDefaults.standard.synchronize()
+   }
+
+   public static func getWhichTeam() -> String? {
+       let value:String? = UserDefaults.standard.value(forKey: "which_team") as! String?
+       return value
+   }
+
+  //mavi takım puan
+   public static func setBlueTeamScore(value:Int) {
+       UserDefaults.standard.set(value, forKey: "blue_team_score")
+       UserDefaults.standard.synchronize()
+   }
+
+   public static func getBlueTeamScore() -> Int {
+       let value:Int? = UserDefaults.standard.value(forKey: "blue_team_score") as! Int?
+     return value ?? 0
+   }
+
+  //kırmızı takım puan
+   public static func setRedTeamScore(value:Int) {
+       UserDefaults.standard.set(value, forKey: "red_team_score")
+       UserDefaults.standard.synchronize()
+   }
+
+   public static func getRedTeamScore() -> Int {
+       let value:Int? = UserDefaults.standard.value(forKey: "red_team_score") as! Int?
+     return value ?? 0
+   }
+  //kacıncı raouttayım
+   public static func setWhichRound(value:Int) {
+       UserDefaults.standard.set(value, forKey: "which_round")
+       UserDefaults.standard.synchronize()
+   }
+
+   public static func getWhichRound() -> Int {
+       let value:Int? = UserDefaults.standard.value(forKey: "which_round") as! Int?
+     return value ?? 1
+   }
 
 }
