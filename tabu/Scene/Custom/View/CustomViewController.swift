@@ -7,7 +7,8 @@
 
 import UIKit
 import AVFoundation
-class CustomViewController: UIViewController {
+
+final class CustomViewController: UIViewController {
 
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var separatorView: UIView!
@@ -15,11 +16,7 @@ class CustomViewController: UIViewController {
   @IBOutlet weak var passCountView: UIView!
   @IBOutlet weak var roundCountView: UIView!
   @IBOutlet weak var readyButton: UIButton!
-  
   @IBOutlet weak var musicView: UIView!
-  private lazy var roundTime = 60
-  private lazy var roundCount = 2
-  private lazy var passCount = 2
 
   @IBOutlet weak var volumeSlider: UISlider!
   @IBOutlet weak var vibrationSwitch: UISwitch!
@@ -27,8 +24,13 @@ class CustomViewController: UIViewController {
   @IBOutlet weak var roundCountLabel: UILabel!
   @IBOutlet weak var passCountLabel: UILabel!
 
+  private lazy var roundTime = 60
+  private lazy var roundCount = 2
+  private lazy var passCount = 2
+
+
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
 
     self.roundTime = UserDefaults.getTimeRound() ?? 60
     self.roundCount = UserDefaults.getNumberofRounds() ?? 2
@@ -36,9 +38,9 @@ class CustomViewController: UIViewController {
     rountTimeLabel.text = "\(roundTime)"
     roundCountLabel.text = "\(roundCount)"
     passCountLabel.text = "\(passCount)"
-      setupUI()
+    setupUI()
 
-    }
+  }
 
 
   @IBAction func readyButtonTapped(_ sender: Any) {
@@ -90,7 +92,6 @@ class CustomViewController: UIViewController {
       } else {
         roundCount -= 1
       }
-
     case 3 :
       //Round Sayısı +1
       roundCount += 1
@@ -100,7 +101,6 @@ class CustomViewController: UIViewController {
       } else {
         passCount -= 1
       }
-
     case 5 :
       //pass hakkı +1
       passCount += 1
@@ -165,7 +165,5 @@ extension CustomViewController : GeneralProtocol {
 
   }
   func layoutUI() {}
-
-
 
 }

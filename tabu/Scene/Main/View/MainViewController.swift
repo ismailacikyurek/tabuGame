@@ -9,26 +9,20 @@ import UIKit
 import SnapKit
 import Lottie
 
+final class MainViewController: UIViewController {
 
-class MainViewController: UIViewController {
-
-  lazy var tabuTextImage = UIImageView()
-  lazy var startButton = UIButton()
-  lazy var rulesButton = UIButton()
-
-  lazy var customView = UIView()
-
-  lazy var timeUImageView = UIImageView()
-  lazy var timeLabel = UILabel()
-
-  lazy var roundUImageView = UIImageView()
-  lazy var roundCountLabel = UILabel()
-
-  lazy var passUImageView = UIImageView()
-  lazy var passCountLabel = UILabel()
-
-  lazy var viewModel = MainViewModel()
-  lazy var customViewController = CustomViewController()
+  private lazy var tabuTextImage = UIImageView()
+  private lazy var startButton = UIButton()
+  private lazy var rulesButton = UIButton()
+  private lazy var customView = UIView()
+  private lazy var timeUImageView = UIImageView()
+  private lazy var timeLabel = UILabel()
+  private lazy var roundUImageView = UIImageView()
+  private lazy var roundCountLabel = UILabel()
+  private lazy var passUImageView = UIImageView()
+  private lazy var passCountLabel = UILabel()
+  private lazy var viewModel = MainViewModel()
+  private lazy var customViewController = CustomViewController()
   private lazy var animationView : LottieAnimationView = {
         let animationView = LottieAnimationView(name: "smile", animationCache: .none)
         animationView.contentMode = .scaleToFill
@@ -65,14 +59,14 @@ class MainViewController: UIViewController {
     animatePhotoImageView()
   }
   
-  func setNavBar() {
+  fileprivate func  setNavBar() {
     navigationController?.navigationBar.tintColor = .black
     navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
   }
 
   
 
-  func setGradientBackground() {
+  fileprivate func  setGradientBackground() {
     let colorTop =  UIColor.mainBackgroundColor.cgColor
     let colorBottom = UIColor.mainBackgroundBottomColor.cgColor
 
@@ -160,12 +154,11 @@ extension MainViewController : GeneralProtocol {
     passCountLabelConstraints()
     passUImageViewConstraints()
   }
-
-
 }
+
 extension MainViewController {
 
-  func animatePhotoImageView() {
+  fileprivate func animatePhotoImageView() {
     UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseOut, animations: { [self] in
       startButton.frame = CGRect(x: 0, y: 790, width: 100, height: 100)
       rulesButton.frame = CGRect(x: -60, y: -790, width: 100, height: 100)
@@ -192,7 +185,7 @@ extension MainViewController {
 
 extension MainViewController {
 
-  func tabuTextImageConstraints() {
+  fileprivate func  tabuTextImageConstraints() {
     self.tabuTextImage.snp.makeConstraints { make in
       make.bottom.equalTo(self.startButton.snp.top).offset(-50)
       make.height.equalTo(90)
@@ -200,7 +193,7 @@ extension MainViewController {
       make.trailing.equalTo(self.view.snp.trailing).offset(-10)
     }
   }
-  func startButtonConstraints() {
+  fileprivate func  startButtonConstraints() {
     self.startButton.snp.makeConstraints { make in
       make.bottom.equalTo(self.animationView.snp.top).offset(40)
       make.height.equalTo(UIScreen.main.bounds.height/5.5)
@@ -209,8 +202,7 @@ extension MainViewController {
     }
   }
 
-
-  func rulesButtonConstraints() {
+  fileprivate func  rulesButtonConstraints() {
     self.rulesButton.snp.makeConstraints { make in
       make.top.equalTo(startButton.snp.bottom).offset(3)
       make.height.equalTo(UIScreen.main.bounds.height/5.5)
@@ -219,14 +211,14 @@ extension MainViewController {
     }
   }
 
-  func animationViewConstraints() {
+  fileprivate func  animationViewConstraints() {
     self.animationView.snp.makeConstraints { make in
       make.centerY.equalTo(view.snp.centerY).offset(30)
       make.width.height.equalTo(80)
       make.leading.equalTo(self.view.snp.leading).offset(UIScreen.main.bounds.width/2-40)
     }
   }
-  func customViewConstraints() {
+  fileprivate func  customViewConstraints() {
     self.customView.snp.makeConstraints { make in
       make.centerX.equalTo(view.snp.centerX).offset(0)
       make.height.equalTo(60)
@@ -235,14 +227,14 @@ extension MainViewController {
     }
   }
 
-  func timeUImageViewwConstraints() {
+  fileprivate func  timeUImageViewwConstraints() {
     self.timeUImageView.snp.makeConstraints { make in
       make.centerY.equalTo(self.customView.snp.centerY).offset(0)
       make.height.width.equalTo(20)
       make.leading.equalTo(self.customView.snp.leading).offset(20)
     }
   }
-  func timeLabelConstraints() {
+  fileprivate func  timeLabelConstraints() {
     self.timeLabel.snp.makeConstraints { make in
       make.centerY.equalTo(self.customView.snp.centerY).offset(0)
       make.height.equalTo(20)
@@ -250,14 +242,14 @@ extension MainViewController {
       make.leading.equalTo(self.timeUImageView.snp.leading).offset(20)
     }
   }
-  func roundUImageViewConstraints() {
+  fileprivate func  roundUImageViewConstraints() {
     self.roundUImageView.snp.makeConstraints { make in
       make.centerY.equalTo(self.customView.snp.centerY).offset(0)
       make.height.width.equalTo(20)
       make.leading.equalTo(self.timeLabel.snp.leading).offset(100)
     }
   }
-  func roundCountLabelConstraints() {
+  fileprivate func  roundCountLabelConstraints() {
     self.roundCountLabel.snp.makeConstraints { make in
       make.centerY.equalTo(self.customView.snp.centerY).offset(0)
       make.height.width.equalTo(20)
@@ -272,7 +264,7 @@ extension MainViewController {
       make.trailing.equalTo(self.customView.snp.trailing).offset(-20)
     }
   }
-  func passUImageViewConstraints() {
+  fileprivate func  passUImageViewConstraints() {
     self.passUImageView.snp.makeConstraints { make in
       make.centerY.equalTo(self.customView.snp.centerY).offset(0)
       make.height.width.equalTo(20)
@@ -280,5 +272,3 @@ extension MainViewController {
     }
   }
 }
-
-

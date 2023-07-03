@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HowGameViewController: UIViewController {
+final class HowGameViewController: UIViewController {
 
   @IBOutlet weak var mainView: UIView!
   override func viewDidLoad() {

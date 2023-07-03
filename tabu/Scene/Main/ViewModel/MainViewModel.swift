@@ -10,7 +10,7 @@ import Foundation
 protocol MainViewModelProtocol : AnyObject {
   func customizationComplete()
 }
-class MainViewModel {
+final class MainViewModel {
   var viewController = MainViewController()
   weak var delegate : MainViewModelProtocol?
 }

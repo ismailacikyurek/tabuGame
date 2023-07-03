@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 import SnapKit
 
-class ReadyViewController: UIViewController {
+final class ReadyViewController: UIViewController {
 
   let redView = UIView()
   let roundLabel = UILabel()
@@ -84,7 +84,7 @@ class ReadyViewController: UIViewController {
 
   }
 
-  func entryAnimate() {
+  fileprivate func  entryAnimate() {
     UIView.animate(withDuration: 0.6, delay: 0.6, options: .curveEaseOut, animations: { [self] in
       redView.transform = CGAffineTransform(translationX: 0, y: -60)
       blueView.transform = CGAffineTransform(translationX: 0, y: 60)
@@ -97,7 +97,7 @@ class ReadyViewController: UIViewController {
   }
 
 
-  func finishGame() {
+  fileprivate func  finishGame() {
     setGradientBackground()
     layoutUI()
     animationView.play()
@@ -112,7 +112,7 @@ class ReadyViewController: UIViewController {
 
   }
 
-  func setGradientBackground() {
+  fileprivate func  setGradientBackground() {
     let colorTop =  UIColor.mainBackgroundColor.cgColor
     let colorBottom = UIColor.mainBackgroundBottomColor.cgColor
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WordsTableViewCell: UITableViewCell {
+final class WordsTableViewCell: UITableViewCell {
 
   @IBOutlet weak var wordLabel: UILabel!
   override func awakeFromNib() {

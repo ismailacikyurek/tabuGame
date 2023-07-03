@@ -11,7 +11,7 @@ import SnapKit
 import AudioToolbox
 
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
   private lazy var wordCartView = UIView()
   private lazy var wordTableView = UITableView()
   private lazy var wordTableImage = UIImageView()
@@ -27,8 +27,8 @@ class GameViewController: UIViewController {
   private lazy var roundFollowCounter = 0
   private lazy var passCount = UserDefaults.getRightofPass() ?? 2
   private lazy var isStop = Bool()
-  var  timer = Timer()
   private lazy var  time = UserDefaults.getTimeRound() ?? 60
+
   private lazy var animationView : LottieAnimationView = {
     let animationView = LottieAnimationView(name: "ok-tik", animationCache: .none)
     animationView.contentMode = .scaleToFill
@@ -39,7 +39,7 @@ class GameViewController: UIViewController {
     animationView.translatesAutoresizingMaskIntoConstraints = true
     return animationView
   }()
-
+  var  timer = Timer()
   private let shapeLayer = CAShapeLayer()
   private let trackLAyer = CAShapeLayer()
   private lazy var viewModel = GameViewModel()
@@ -59,21 +59,22 @@ class GameViewController: UIViewController {
     viewModel.fetchScore()
   }
 
-
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     viewModel.nextWordCart()
     viewModel.startTime()
     self.startAnimateTime()
   }
+
   override func viewWillDisappear(_ animated: Bool) {
     musicVolume(UserDefaults.getMusicVolume() ?? 0.7)
   }
-  func setNavBar() {
+
+  fileprivate func setNavBar() {
     navigationController?.navigationBar.isHidden = true
   }
 
-  func startAnimateTime() {
+ fileprivate func startAnimateTime() {
     let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
     basicAnimation.toValue = 0.8
     basicAnimation.duration = CFTimeInterval(time ?? 2)
@@ -82,12 +83,12 @@ class GameViewController: UIViewController {
     shapeLayer.add(basicAnimation, forKey: "urBasic")
 
   }
-  func pauseAnimation(){
+  fileprivate func pauseAnimation(){
     var pausedTime = shapeLayer.convertTime(CACurrentMediaTime(), from: nil)
     shapeLayer.speed = 0.0
     shapeLayer.timeOffset = pausedTime
   }
-  func resumeAnimation(){
+  fileprivate func resumeAnimation(){
     var pausedTime = shapeLayer.timeOffset
     shapeLayer.speed = 1.0
     shapeLayer.timeOffset = 0.0
@@ -96,11 +97,10 @@ class GameViewController: UIViewController {
     shapeLayer.beginTime = timeSincePause
   }
 
-  func musicVolume(_ value : Float) {
+  fileprivate func musicVolume(_ value : Float) {
     var volumeUserInfo = ["volume" : value]
     NotificationCenter.default.post(name: Notification.Name(rawValue: "volume_value"), object: nil,userInfo: volumeUserInfo)
   }
-
 
   @objc func fireTimer() {
     time -= 1
@@ -110,7 +110,8 @@ class GameViewController: UIViewController {
       finishTime()
     }
   }
-  func finishTime() {
+
+  fileprivate func finishTime() {
     self.timeLabel.text = "Süre Doldu"
     UIView.animate(withDuration: 1.5, animations: { [self] in
       timeLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
@@ -125,7 +126,7 @@ class GameViewController: UIViewController {
     present(alert, animated: true)
   }
 
-  func otherTeam() {
+  fileprivate func  otherTeam() {
     if UserDefaults.getWhichTeam() == teams.blueTeam.rawValue {
       UserDefaults.setWhichTeam(value: teams.redTeam.rawValue)
       let gameVC = ReadyViewController()
@@ -139,7 +140,6 @@ class GameViewController: UIViewController {
       gameVC.modalPresentationStyle = .fullScreen
       self.navigationController?.pushViewController(gameVC, animated: true)
     }
-
   }
 }
 
@@ -149,8 +149,8 @@ extension GameViewController : GeneralProtocol {
     view.addSubviews(wordCartView,pasButton,tabuButton,trueButton,animationView,tabuLabel,timeLabel,playAndStopButton,homeButton,passCountLabel,scoreLabel)
     wordCartView.addSubviews(wordTableView,wordTableImage)
 
-
   }
+
   func addTarget() {
     self.pasButton.addTarget(self, action: #selector(pasButtonTapped), for: .touchUpInside)
     self.tabuButton.addTarget(self, action: #selector(tabuButtonButtonTapped), for: .touchUpInside)
@@ -237,16 +237,15 @@ extension GameViewController : GeneralProtocol {
     homeButtonConstraints()
     passCountLabelConstraints()
     scoreLabelConstraints()
-
   }
-  func timerAnimation() {
+
+  fileprivate func  timerAnimation() {
     let circulaterPath = UIBezierPath(arcCenter: CGPoint(x: view.frame.width/2,
                                                          y: view.frame.height/6),
-                                      radius: 30,
-                                      startAngle: -CGFloat.pi / 2,
-                                      endAngle: CGFloat.pi * 2,
-                                      clockwise: true)
-
+                                                          radius: 30,
+                                                          startAngle: -CGFloat.pi / 2,
+                                                          endAngle: CGFloat.pi * 2,
+                                                          clockwise: true)
 
     trackLAyer.path = circulaterPath.cgPath
     view.layer.addSublayer(trackLAyer)
@@ -285,17 +284,14 @@ extension GameViewController  : GameViewModelProtocol{
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [self] in
       UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseOut, animations: { [self] in
         wordCartView.transform = CGAffineTransform(translationX: 0, y: 0)
-
         trueButton.isEnabled = true
         pasButton.isEnabled = true
         tabuButton.isEnabled = true
       })
-
     }
-
   }
 
-  func trueNextWord() {
+  fileprivate func  trueNextWord() {
     
     if UserDefaults.getWhichTeam() == teams.blueTeam.rawValue  {
       viewModel.scoreCalculator(count: 1, teamColor: .blueTeam)
@@ -312,13 +308,12 @@ extension GameViewController  : GameViewModelProtocol{
     }
   }
 
-  func tabuNextWord() {
+  fileprivate func  tabuNextWord() {
     if UserDefaults.getWhichTeam() == teams.blueTeam.rawValue  {
       viewModel.scoreCalculator(count: -1, teamColor: .blueTeam)
     } else {
       viewModel.scoreCalculator(count: -1, teamColor: .redTeam)
     }
-
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [self] in
       tabuLabel.isHidden = true
@@ -330,8 +325,7 @@ extension GameViewController  : GameViewModelProtocol{
     }
   }
 
-  func passNextWord() {
-
+  fileprivate func  passNextWord() {
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { [self] in
       UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseOut, animations: { [self] in
@@ -367,7 +361,6 @@ extension GameViewController  : GameViewModelProtocol{
     tabuNextWord()
 
     if UserDefaults.getVabilition() == true {
-
       AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
   }
@@ -399,7 +392,6 @@ extension GameViewController  : GameViewModelProtocol{
       self.tabuButton.isEnabled = false
       self.trueButton.isEnabled = false
     }
-
   }
 
   @objc func homeButtonTapped() {
@@ -411,7 +403,7 @@ extension GameViewController  : GameViewModelProtocol{
 }
 
 extension GameViewController  {
-  func wordCartViewConstraints() {
+  fileprivate func  wordCartViewConstraints() {
     self.wordCartView.snp.makeConstraints { make in
       make.centerY.equalTo(self.view).offset(0)
       make.height.equalTo(290)
@@ -420,7 +412,7 @@ extension GameViewController  {
     }
   }
 
-  func wordTableViewConstraints() {
+  fileprivate func  wordTableViewConstraints() {
     self.wordTableView.snp.makeConstraints { make in
       make.top.equalTo(self.wordCartView.snp.top).offset(-10)
       make.bottom.equalTo(self.wordCartView).offset(0)
@@ -428,7 +420,7 @@ extension GameViewController  {
       make.trailing.equalTo(self.view.snp.trailing).offset(-70)
     }
   }
-  func wordTableImageConstraints() {
+  fileprivate func  wordTableImageConstraints() {
     self.wordTableImage.snp.makeConstraints { make in
       make.top.equalTo(self.wordCartView.snp.top).offset(0)
       make.bottom.equalTo(self.wordCartView).offset(0)
@@ -436,7 +428,7 @@ extension GameViewController  {
       make.trailing.equalTo(self.view.snp.trailing).offset(-70)
     }
   }
-  func pasButtonConstraints() {
+  fileprivate func  pasButtonConstraints() {
     self.pasButton.snp.makeConstraints { make in
       make.bottom.equalTo(self.tabuButton.snp.bottom).offset(0)
       make.height.width.equalTo(90)
@@ -444,62 +436,62 @@ extension GameViewController  {
     }
   }
 
-  func tabuButtonConstraints() {
+  fileprivate func  tabuButtonConstraints() {
     self.tabuButton.snp.makeConstraints { make in
       make.bottom.equalTo(self.view.snp.bottom).offset(-30)
       make.height.width.equalTo(100)
       make.centerX.equalTo(self.view).offset(0)
     }
   }
-  func trueButtonConstraints() {
+  fileprivate func  trueButtonConstraints() {
     self.trueButton.snp.makeConstraints { make in
       make.bottom.equalTo(self.tabuButton.snp.bottom).offset(0)
       make.height.width.equalTo(90)
       make.leading.equalTo(self.tabuButton.snp.trailing).offset(20)
     }
   }
-  func animationViewConstraints() {
+  fileprivate func  animationViewConstraints() {
     self.animationView.snp.makeConstraints { make in
       make.centerX.equalTo(self.wordCartView.snp.trailing).offset(0)
       make.centerY.equalTo(self.wordCartView.snp.bottom).offset(0)
       make.height.width.equalTo(80)
     }
   }
-  func timeLabelConstraints() {
+  fileprivate func  timeLabelConstraints() {
     self.timeLabel.snp.makeConstraints { make in
       make.centerX.equalTo(self.view.snp.centerX).offset(0)
       make.top.equalTo(self.view.snp.top).offset(view.bounds.height/6-60)
       make.height.width.equalTo(120)
     }
   }
-  func tabuLabelConstraints() {
+  fileprivate func  tabuLabelConstraints() {
     self.tabuLabel.snp.makeConstraints { make in
       make.centerY.equalTo(self.wordCartView.snp.centerY).offset(0)
       make.centerX.equalTo(self.wordCartView.snp.centerX).offset(0)
     }
   }
-  func playAndStopButtonConstraints() {
+  fileprivate func  playAndStopButtonConstraints() {
     self.playAndStopButton.snp.makeConstraints { make in
       make.top.equalTo(self.view.snp.top).offset(view.bounds.height/6-25)
       make.trailing.equalTo(self.view.snp.trailing).offset(-50)
       make.width.height.equalTo(50)
     }
   }
-  func homeButtonConstraints() {
+  fileprivate func  homeButtonConstraints() {
     self.homeButton.snp.makeConstraints { make in
       make.top.equalTo(self.view.snp.top).offset(35)
       make.leading.equalTo(self.view.snp.leading).offset(15)
       make.width.height.equalTo(30)
     }
   }
-  func passCountLabelConstraints() {
+  fileprivate func  passCountLabelConstraints() {
     self.passCountLabel.snp.makeConstraints { make in
       make.top.equalTo(self.pasButton.snp.top).offset(7)
       make.leading.equalTo(self.pasButton.snp.leading).offset(7)
       make.width.height.equalTo(26)
     }
   }
-  func scoreLabelConstraints() {
+  fileprivate func  scoreLabelConstraints() {
     self.scoreLabel.snp.makeConstraints { make in
       make.centerY.equalTo(self.timeLabel.snp.centerY).offset(0)
       make.leading.equalTo(self.view.snp.leading).offset(10)
@@ -510,7 +502,7 @@ extension GameViewController  {
 }
 extension GameViewController : UITableViewDelegate,UITableViewDataSource {
 
-  func setTableView() {
+  fileprivate func  setTableView() {
     self.wordTableView.dataSource = self
     self.wordTableView.delegate = self
     self.wordTableView.separatorStyle = .none
@@ -540,12 +532,11 @@ extension GameViewController : UITableViewDelegate,UITableViewDataSource {
         cell.wordLabel.backgroundColor = .white
         cell.wordLabel.textColor = .black
       }
-
       return cell
-
     }
     return UITableViewCell()
   }
+
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     var height:CGFloat = CGFloat()
     switch indexPath.row {
@@ -556,6 +547,5 @@ extension GameViewController : UITableViewDelegate,UITableViewDataSource {
     }
     return height
   }
-  
 
 }

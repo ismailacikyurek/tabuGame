@@ -8,7 +8,7 @@
 //
 import UIKit
 
-class ToastMessage {
+final class ToastMessage {
 
     public static func showToastMessage(message : String, font: UIFont,y:CGFloat, vc: UIViewController) {
         let view = UIView(frame: CGRect(x: 40, y: y, width: UIScreen.main.bounds.width-80, height: 45))
@@ -28,7 +28,6 @@ class ToastMessage {
 
         vc.view.addSubview(view)
         vc.view.addSubview(messageLabel)
-
 
         UIView.animate(withDuration: 4.0, delay: 2, options: .curveEaseOut, animations: {
             messageLabel.alpha = 0.0

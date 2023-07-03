@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopupViewController: UIViewController {
+final class PopupViewController: UIViewController {
 
   @IBOutlet weak var mainView: UIView!
   @IBOutlet weak var yesButton: UIButton!
