@@ -30,9 +30,12 @@ class PopupViewController: UIViewController {
 
   @IBAction func yesButtonTapped(_ sender: Any) {
     dismiss(animated: true) {
-      self.gameViewController?.navigationController?.popToRootViewController(animated: true)
+      let mainVC = MainViewController()
+      mainVC.modalPresentationStyle = .overFullScreen
+      self.gameViewController?.navigationController?.pushViewController(mainVC, animated: true)
     }
   }
+
   @IBAction func noButtonTapped(_ sender: Any) {
     self.dismiss(animated: true)
   }
