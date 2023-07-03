@@ -54,11 +54,17 @@ class CustomViewController: UIViewController {
   @IBAction func infoButtonTapped(_ sender: UIButton) {
     switch sender.tag {
     case 0 :
-      ToastMessage.showToastMessage(message: "Anlatıcının anlatma süresi", font: UIFont.systemFont(ofSize: 14), y: roundTimeView.frame.minY, vc: self)
+      ToastMessage.showToastMessage(message: "Anlatıcının anlatma süresi",
+                                    font: UIFont.systemFont(ofSize: 14),
+                                    y: roundTimeView.frame.maxY, vc: self)
     case 1 :
-      ToastMessage.showToastMessage(message: "Her oyuncu bir kez Anlatıcı olduğunda bir raunt tamamlanmış olur.", font: UIFont.systemFont(ofSize: 14), y: roundCountView.frame.minY, vc: self)
+      ToastMessage.showToastMessage(message: "Her oyuncu bir kez Anlatıcı olduğunda bir raunt tamamlanmış olur.",
+                                    font: UIFont.systemFont(ofSize: 14),
+                                    y: roundCountView.frame.maxY, vc: self)
     case 2 :
-      ToastMessage.showToastMessage(message: "Anlatıcının her turda puan cezası almadan pas geçebileceği kelime sayısı", font: UIFont.systemFont(ofSize: 14), y: passCountView.frame.minY, vc: self)
+      ToastMessage.showToastMessage(message: "Anlatıcının her turda puan cezası almadan pas geçebileceği kelime sayısı",
+                                    font: UIFont.systemFont(ofSize: 14),
+                                    y: passCountView.frame.maxY, vc: self)
     default:
       print("")
     }
