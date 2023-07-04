@@ -54,11 +54,11 @@ final class CustomViewController: UIViewController {
                                     font: UIFont.systemFont(ofSize: 14),
                                     y: roundTimeView.frame.maxY, vc: self)
     case 1 :
-      ToastMessage.showToastMessage(message: "Her oyuncu bir kez Anlatıcı olduğunda bir raunt tamamlanmış olur.",
+      ToastMessage.showToastMessage(message: "Her oyuncu bir kez anlatıcı olduğunda bir rauntta tamamlanmış olur.",
                                     font: UIFont.systemFont(ofSize: 14),
                                     y: roundCountView.frame.maxY, vc: self)
     case 2 :
-      ToastMessage.showToastMessage(message: "Anlatıcının her turda puan cezası almadan pas geçebileceği kelime sayısı",
+      ToastMessage.showToastMessage(message: "Anlatıcının her rauntta puan cezası almadan pas geçebileceği kelime sayısı",
                                     font: UIFont.systemFont(ofSize: 14),
                                     y: passCountView.frame.maxY, vc: self)
     default:
@@ -72,9 +72,9 @@ final class CustomViewController: UIViewController {
     switch button.tag {
     case 0 :
       //Round Süresi -10
-      if roundTime < 70 {
+      if roundTime < 4 {
       } else {
-        roundTime -= 10
+        roundTime -= 1
       }
     case 1 :
       //Round Süresi +10
