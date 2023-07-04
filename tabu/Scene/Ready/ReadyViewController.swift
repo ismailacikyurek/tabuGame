@@ -21,9 +21,7 @@ final class ReadyViewController: UIViewController {
     animationView.contentMode = .scaleToFill
     animationView.animationSpeed = 0.3
     animationView.loopMode = .loop
-    animationView.backgroundColor = .clear
     animationView.layer.masksToBounds = true
-    animationView.layer.cornerRadius = 40
     animationView.layer.zPosition = 3
     animationView.isHidden = true
     animationView.translatesAutoresizingMaskIntoConstraints = true
@@ -52,6 +50,7 @@ final class ReadyViewController: UIViewController {
   var roundCount = 1
   override func viewDidLoad() {
     super.viewDidLoad()
+
     if UserDefaults.getWhichTeam() == nil {
       UserDefaults.setWhichTeam(value: teams.blueTeam.rawValue)
     }
@@ -70,12 +69,12 @@ final class ReadyViewController: UIViewController {
         }
 
       } else {
-
+        //Oyun Bitti
         self.finishGame()
       }
 
-
     } else {
+      //Devam
       setupUI()
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){ [self] in
         self.entryAnimate()
