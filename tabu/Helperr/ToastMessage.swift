@@ -12,8 +12,11 @@ final class ToastMessage {
 
     public static func showToastMessage(message : String, font: UIFont,y:CGFloat, vc: UIViewController) {
         let view = UIView(frame: CGRect(x: 40, y: y, width: UIScreen.main.bounds.width-80, height: 45))
-        view.layer.backgroundColor = UIColor.systemGray3.cgColor
+        view.layer.backgroundColor = UIColor.mainBackgroundColor.cgColor
         view.alpha = 1.0
+        view.layer.masksToBounds = true
+       view.layer.borderColor = UIColor.mainBackgroundColor.cgColor
+       view.layer.borderWidth = 1
         view.layer.cornerRadius = 14
         view.clipsToBounds  =  true
 
@@ -23,7 +26,6 @@ final class ToastMessage {
         messageLabel.adjustsFontSizeToFitWidth = true
         messageLabel.minimumScaleFactor = 0.2
         messageLabel.numberOfLines = 2
-        messageLabel.textColor = .black
         messageLabel.text = message
 
         vc.view.addSubview(view)
