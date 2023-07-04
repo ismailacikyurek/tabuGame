@@ -27,6 +27,17 @@ final class ReadyViewController: UIViewController {
     animationView.translatesAutoresizingMaskIntoConstraints = true
     return animationView
   }()
+  private lazy var animationView2 : LottieAnimationView = {
+    let animationView = LottieAnimationView(name: "victory", animationCache: .none)
+    animationView.contentMode = .scaleToFill
+    animationView.animationSpeed = 0.6
+    animationView.loopMode = .loop
+    animationView.layer.masksToBounds = true
+    animationView.layer.zPosition = 3
+    animationView.isHidden = true
+    animationView.translatesAutoresizingMaskIntoConstraints = true
+    return animationView
+  }()
 
   private lazy var backTheLobyyButton : UIButton = {
     let x = UIButton()
@@ -37,13 +48,22 @@ final class ReadyViewController: UIViewController {
     x.layer.cornerRadius = 15
     return x
   }()
-  private lazy var winningTeamLabel : UILabel = {
+  private lazy var blueTeamScoreLabel : UILabel = {
     let x = UILabel()
-    x.backgroundColor = .clear
+    x.backgroundColor = .blueTeamColor
     x.textColor = .white
     x.numberOfLines = 4
     x.textAlignment = .center
-    x.font = UIFont.boldSystemFont(ofSize: 24)
+    x.font = UIFont.boldSystemFont(ofSize: 30)
+    return x
+  }()
+  private lazy var redTeamScoreLabel : UILabel = {
+    let x = UILabel()
+    x.backgroundColor = .readTeamColor
+    x.textColor = .white
+    x.numberOfLines = 4
+    x.textAlignment = .center
+    x.font = UIFont.boldSystemFont(ofSize: 30)
     return x
   }()
 
@@ -101,12 +121,24 @@ final class ReadyViewController: UIViewController {
     layoutUI()
     animationView.play()
     animationView.isHidden = false
+    animationView2.play()
+    animationView2.isHidden = false
+    blueTeamScoreLabel.text = "Mavi Takım : \(UserDefaults.getBlueTeamScore())"
+    redTeamScoreLabel.text = "Kırmızı Takım : \(UserDefaults.getRedTeamScore())"
     if UserDefaults.getRedTeamScore() > UserDefaults.getBlueTeamScore() {
       //kırmızı kazandı
-      winningTeamLabel.text = "Kazanan : Kırmızı Takım"
+      UIView.animate(withDuration: 1.5, animations: { [self] in
+        redTeamScoreLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        blueTeamScoreLabel.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+      },completion: nil)
+
     }  else {
       //mavi kazandı
-      winningTeamLabel.text = "Kazanan : Mavi Takım"
+      UIView.animate(withDuration: 1.5, animations: { [self] in
+        blueTeamScoreLabel.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        redTeamScoreLabel.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+      },completion: nil)
+
     }
 
   }
@@ -131,7 +163,7 @@ final class ReadyViewController: UIViewController {
 }
 extension ReadyViewController : GeneralProtocol {
   func addView() {
-    view.addSubviews(redView,blueView,roundLabel,personsImage,personsImage2,animationView,backTheLobyyButton,winningTeamLabel)
+    view.addSubviews(redView,blueView,roundLabel,personsImage,personsImage2,animationView,backTheLobyyButton,blueTeamScoreLabel,redTeamScoreLabel,animationView2)
   }
 
   func addTarget() {
@@ -158,8 +190,10 @@ extension ReadyViewController : GeneralProtocol {
 
   func layoutUI() {
     animationViewConstraints()
+    animationView2Constraints()
     backTheLobyyButtonConstraints()
-    winningTeamLabelConstraints()
+  blueTeamScoreLabelConstraints()
+    redReamScoreLabelConstraints()
   }
 
 
@@ -174,6 +208,15 @@ extension ReadyViewController {
 
     }
   }
+  func animationView2Constraints() {
+    self.animationView2.snp.makeConstraints { make in
+      make.top.equalTo(view.snp.top).offset(-90)
+      make.bottom.equalTo(view.snp.bottom).offset(-250)
+      make.leading.equalTo(view.snp.leading).offset(-50)
+      make.trailing.equalTo(view.snp.trailing).offset(50)
+
+    }
+  }
 
   func backTheLobyyButtonConstraints() {
     self.backTheLobyyButton.snp.makeConstraints { make in
@@ -184,12 +227,24 @@ extension ReadyViewController {
 
     }
   }
-  func winningTeamLabelConstraints() {
-    self.winningTeamLabel.snp.makeConstraints { make in
-      make.height.equalTo(140)
-      make.width.equalTo(200)
-      make.centerY.equalTo(view.snp.centerY).offset(0)
-      make.centerX.equalTo(view.snp.centerX).offset(0)
+  func blueTeamScoreLabelConstraints() {
+    self.blueTeamScoreLabel.snp.makeConstraints { make in
+      make.height.equalTo(120)
+      make.top.equalTo(view.snp.top).offset(140)
+      make.leading.equalTo(view.snp.leading).offset(10)
+      make.trailing.equalTo(view.snp.trailing).offset(-10)
     }
   }
+
+  func redReamScoreLabelConstraints() {
+    self.redTeamScoreLabel.snp.makeConstraints { make in
+      make.height.equalTo(120)
+      make.top.equalTo(blueTeamScoreLabel.snp.bottom).offset(40)
+      make.leading.equalTo(view.snp.leading).offset(10)
+      make.trailing.equalTo(view.snp.trailing).offset(-10)
+    }
+  }
+
+
+
 }
