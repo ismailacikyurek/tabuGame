@@ -21,7 +21,9 @@ Data : Userdefaults
 
 
 
-<img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 13" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/35b8ede8-5b58-4fef-bec2-94dccc356c67">
+<img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 13" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/35b8ede8-5b58-4fef-bec2-94dccc356c67"><img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 20" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/617eb877-d4f2-4129-ab04-8ef90284d8b6">
+
+
 
 
 
