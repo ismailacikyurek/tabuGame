@@ -55,7 +55,7 @@ final class GameViewController: UIViewController {
     setupUI()
     layoutUI()
     timerAnimation()
-    musicVolume(Float(0.0))
+    viewModel.musicVolume(0.0)
     viewModel.fetchScore()
   }
 
@@ -67,7 +67,7 @@ final class GameViewController: UIViewController {
   }
 
   override func viewWillDisappear(_ animated: Bool) {
-    musicVolume(UserDefaults.getMusicVolume() ?? 0.7)
+    viewModel.musicVolume(UserDefaults.getMusicVolume() ?? 0.7)
   }
 
   fileprivate func setNavBar() {
@@ -83,11 +83,13 @@ final class GameViewController: UIViewController {
     shapeLayer.add(basicAnimation, forKey: "urBasic")
 
   }
+
   fileprivate func pauseAnimation(){
     var pausedTime = shapeLayer.convertTime(CACurrentMediaTime(), from: nil)
     shapeLayer.speed = 0.0
     shapeLayer.timeOffset = pausedTime
   }
+  
   fileprivate func resumeAnimation(){
     var pausedTime = shapeLayer.timeOffset
     shapeLayer.speed = 1.0
@@ -95,11 +97,6 @@ final class GameViewController: UIViewController {
     shapeLayer.beginTime = 0.0
     let timeSincePause = shapeLayer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
     shapeLayer.beginTime = timeSincePause
-  }
-
-  fileprivate func musicVolume(_ value : Float) {
-    var volumeUserInfo = ["volume" : value]
-    NotificationCenter.default.post(name: Notification.Name(rawValue: "volume_value"), object: nil,userInfo: volumeUserInfo)
   }
 
   @objc func fireTimer() {
@@ -120,27 +117,12 @@ final class GameViewController: UIViewController {
     self.shapeLayer.isHidden = true
     let alert = UIAlertController(title: "Süre Doldu", message: "Sıra diğer takımda", preferredStyle: .alert)
     let ok = UIAlertAction(title: "Tamam", style: .default) {_ in
-      self.otherTeam()
+      self.viewModel.otherTeam()
     }
     alert.addAction(ok)
     present(alert, animated: true)
   }
 
-  fileprivate func  otherTeam() {
-    if UserDefaults.getWhichTeam() == teams.blueTeam.rawValue {
-      UserDefaults.setWhichTeam(value: teams.redTeam.rawValue)
-      let gameVC = ReadyViewController()
-      gameVC.modalPresentationStyle = .fullScreen
-      self.navigationController?.pushViewController(gameVC, animated: true)
-    } else {
-      UserDefaults.setWhichTeam(value: teams.blueTeam.rawValue)
-      let gameVC = ReadyViewController()
-      let whichRoundCount = UserDefaults.getWhichRound()
-      UserDefaults.setWhichRound(value: whichRoundCount+1)
-      gameVC.modalPresentationStyle = .fullScreen
-      self.navigationController?.pushViewController(gameVC, animated: true)
-    }
-  }
 }
 
 
@@ -266,7 +248,7 @@ extension GameViewController : GeneralProtocol {
 
 }
 
-extension GameViewController  : GameViewModelProtocol{
+extension GameViewController  : GameViewModelOutputProtocol{
   func fetchScore(redTeamScore: Int, blueTeamScore: Int) {
     if UserDefaults.getWhichTeam() == teams.blueTeam.rawValue {
       scoreLabel.text = "Puan : \(blueTeamScore)"

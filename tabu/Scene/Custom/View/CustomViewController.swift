@@ -24,11 +24,11 @@ final class CustomViewController: UIViewController {
   @IBOutlet weak var roundCountLabel: UILabel!
   @IBOutlet weak var passCountLabel: UILabel!
 
-  private lazy var roundTime = 60
-  private lazy var roundCount = 2
-  private lazy var passCount = 2
+   lazy var roundTime = 60
+   lazy var roundCount = 2
+   lazy var passCount = 2
 
-
+  private lazy var viewModel : CustomViewModelProtocol = CustomViewModel()
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -39,16 +39,11 @@ final class CustomViewController: UIViewController {
     roundCountLabel.text = "\(roundCount)"
     passCountLabel.text = "\(passCount)"
     setupUI()
-
   }
 
 
   @IBAction func readyButtonTapped(_ sender: Any) {
-    UserDefaults.setTimeRound(second: roundTime)
-    UserDefaults.setNumberofRounds(number: roundCount)
-    UserDefaults.setRightofPass(number: passCount)
-
-    NotificationCenter.default.post(name: Notification.Name(rawValue: "custom_changed"), object: nil,userInfo: nil)
+    viewModel.saveUserDefaults(roundTime: roundTime, roundCount: roundCount, passCount: passCount)
     dismiss(animated: true)
   }
 
@@ -71,6 +66,7 @@ final class CustomViewController: UIViewController {
     }
 
   }
+
   @IBAction func buttonTapped(_ sender: Any) {
     let button = sender as! UIButton
     switch button.tag {
@@ -119,17 +115,14 @@ final class CustomViewController: UIViewController {
   @IBAction func switchChanged(_ sender: UISwitch) {
 
     if sender.isOn {
-      UserDefaults.setVabilition(value: true)
+      viewModel.saveUserDefaultsVibration(vibration: true)
     } else {
-      UserDefaults.setVabilition(value: false)
+      viewModel.saveUserDefaultsVibration(vibration: false)
     }
   }
 
   @IBAction func sliderVolume(_ sender: UISlider) {
-    var volumeUserInfo = ["volume" : sender.value/2]
-    UserDefaults.setMusicVolume(value: sender.value/2)
-    NotificationCenter.default.post(name: Notification.Name(rawValue: "volume_value"), object: nil,userInfo: volumeUserInfo)
-
+    viewModel.saveUserDefaultsVolume(value: sender.value/2)
   }
 }
 extension CustomViewController : GeneralProtocol {
