@@ -9,7 +9,7 @@ import Foundation
 
 extension UserDefaults {
 
-    // tur süresi
+    // raound süresi
     public static func setTimeRound(second:Int?){
         UserDefaults.standard.set(second, forKey: "time_second")
         UserDefaults.standard.synchronize()
@@ -20,7 +20,7 @@ extension UserDefaults {
     }
 
 
-    // tur sayısı
+    // raound sayısı
     public static func setNumberofRounds(number:Int?) {
         UserDefaults.standard.set(number, forKey: "number_of_rounds")
         UserDefaults.standard.synchronize()
@@ -96,7 +96,8 @@ extension UserDefaults {
        let value:Int? = UserDefaults.standard.value(forKey: "red_team_score") as! Int?
      return value ?? 0
    }
-  //kacıncı raouttayım
+  
+  //kacıncı raounddayım
    public static func setWhichRound(value:Int) {
        UserDefaults.standard.set(value, forKey: "which_round")
        UserDefaults.standard.synchronize()
