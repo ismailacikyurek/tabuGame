@@ -25,7 +25,16 @@ Data : Userdefaults
 
 
 
-<img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 34" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/7781c886-343e-473d-a6da-807def301cff">
+<img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 34" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/7781c886-343e-473d-a6da-807def301cff"><img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 39" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/6e2a1ef5-8ee2-42f5-9c2b-f4cc842cb548"><img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 15 44" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/ea145d0d-6545-4280-a02f-f991148394ff">
+
+
+<img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 17 59" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/9f68c012-02ef-4cc7-a7f6-10dadcc903f3"><img width="261" height="461" alt="Ekran Resmi 2023-07-04 12 18 04" src="https://github.com/ismailacikyurek/tabuGame/assets/82399051/8a37c1e2-5c24-47c6-b35b-dd86a99de293">
+
+
+
+
+
+
 
 
 
