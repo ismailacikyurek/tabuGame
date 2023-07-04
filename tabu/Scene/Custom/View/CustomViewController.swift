@@ -72,9 +72,9 @@ final class CustomViewController: UIViewController {
     switch button.tag {
     case 0 :
       //Round Süresi -10
-      if roundTime < 4 {
+      if roundTime < 70 {
       } else {
-        roundTime -= 1
+        roundTime -= 10
       }
     case 1 :
       //Round Süresi +10
