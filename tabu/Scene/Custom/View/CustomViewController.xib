@@ -63,8 +63,8 @@
                                 <action selector="readyButtonTapped:" destination="-1" eventType="touchUpInside" id="M35-Lf-sHC"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tur Süresi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-Vp-gkG">
-                            <rect key="frame" x="128.33333333333334" y="91" width="76.333333333333343" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round Süresi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAZ-Vp-gkG">
+                            <rect key="frame" x="116.33333333333334" y="91" width="100.66666666666666" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="GOX-BH-Y26"/>
                             </constraints>
@@ -241,7 +241,7 @@
                             </constraints>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rjz-8O-TzC">
-                            <rect key="frame" x="103.33333333333334" y="92" width="20" height="19.666666666666671"/>
+                            <rect key="frame" x="91.333333333333329" y="92" width="20" height="19.666666666666671"/>
                             <color key="tintColor" systemColor="labelColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="ew3-xW-d1a"/>
